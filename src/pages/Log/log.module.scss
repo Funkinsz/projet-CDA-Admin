@@ -1,0 +1,36 @@
+.content {
+  height: 100vh;
+  overflow: hidden;
+  img {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100vh;
+    filter: blur(3px);
+  }
+  form {
+    z-index: 1;
+    width: 33%;
+    border-radius: 10px;
+    border: 1px solid #777;
+    background-color: whitesmoke;
+    .block {
+      padding: 15px;
+      width: 75%;
+      label {
+        font-size: 18px;
+      }
+      input {
+        padding: 10px;
+        font-size: 22px;
+      }
+    }
+    .btn {
+      width: 100px;
+      height: 50px;
+      border-radius: 10px;
+      background-color: #777;
+      color: white;
+      border: solid 1px white;
+    }
+  }
+}
