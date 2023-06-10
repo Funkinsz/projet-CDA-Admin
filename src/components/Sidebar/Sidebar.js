@@ -17,6 +17,9 @@ export default function Sidebar() {
           <i className="fa-solid fa-table"></i>
           <span className="secondary">TABLES</span>
         </NavLink>
+
+        <span className='p20'></span>
+
         <NavLink to={"/user"} className="d-flex aic jcsb m10">
           <span className="secondary">USERS</span>
           <i className="fa-solid fa-chevron-right"></i>

@@ -1,11 +1,12 @@
 :root {
-    --primary: rgb(50, 50, 255);
-    --secondary:#777777;
-    --gray-2:#12CBC4;
-    --light-grey:#C4E538;
-    --error: red;
-    --divider:#EE5A24;
+    --primary: #0d6efd;
+    --secondary:#adb5bd;
+    --success:#198754;
+    --warning:#ffc107;
+    --danger: #dc3545;
+    --divider:#6610f2;
     --text-color: #333;
     --font-family: 'Nunito', sans-serif;
-    --box-shadow: 1px 1px #333;
+    --box-shadow: -3px -1px 5px 1px #22222286;
+    --little-bs: -1px -1px 5px 1px #22222286;
 }

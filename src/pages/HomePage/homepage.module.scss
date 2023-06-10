@@ -37,9 +37,9 @@
     }
   }
   .container {
+    min-height: 100vh;
     .sidebar {
-      min-height: 100vh;
-      width: 225px;
+      width: 250px;
       background-color: #333;
       ul {
         width: 100%;
@@ -53,6 +53,7 @@
           padding: 25px 5px;
           text-decoration: none;
           &:hover {
+            margin-left: 15px;
             span,
             i {
               color: white;
@@ -70,6 +71,7 @@
       border-top-left-radius: 25px;
       box-shadow: -3px -1px 5px 1px #22222286;
       width: 100%;
+      padding-left: 5px;
       a {
         width: 100%;
         text-decoration: none;
@@ -79,5 +81,157 @@
         margin: 10px 20px;
       }
     }
+  }
+}
+
+.card_user {
+  transition: 0.1s;
+  width: 45%;
+  height: 225px;
+  border-radius: 25px;
+  overflow: hidden;
+  a {
+    .card_header {
+      height: 50%;
+      background-color: var(--primary);
+      i,
+      h2 {
+        color: white;
+        margin: 5px 0;
+      }
+      i {
+        font-size: 150px;
+        opacity: calc(0.8);
+        rotate: 20deg;
+      }
+    }
+    .card_unset {
+      height: 50%;
+      background-color: var(--primary);
+      filter: grayscale(80%);
+      i,
+      h4 {
+        color: white;
+        margin: 5px 0;
+      }
+    }
+  }
+  &:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+  }
+}
+
+.card_adds {
+  transition: 0.1s;
+  width: 45%;
+  height: 225px;
+
+  border-radius: 25px;
+  color: white;
+  overflow: hidden;
+  .card_header {
+    height: 50%;
+    background-color: var(--success);
+    i,
+    h2 {
+      color: white;
+      margin: 5px 0;
+    }
+    i {
+      font-size: 150px;
+      opacity: calc(0.8);
+      rotate: 20deg;
+    }
+  }
+  .card_unset {
+    height: 50%;
+    background-color: var(--success);
+    filter: grayscale(80%);
+    i,
+    h4 {
+      color: white;
+      margin: 5px 0;
+    }
+  }
+  &:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+  }
+}
+
+.card_facture {
+  transition: 0.1s;
+  width: 45%;
+  height: 225px;
+  border-radius: 25px;
+  overflow: hidden;
+  a {
+    .card_header {
+      height: 50%;
+      background-color: var(--danger);
+      i,
+      h2 {
+        color: white;
+        margin: 5px 0;
+      }
+      i {
+        font-size: 150px;
+        opacity: calc(0.8);
+        rotate: 20deg;
+      }
+    }
+    .card_unset {
+      height: 50%;
+      background-color: var(--danger);
+      filter: grayscale(80%);
+      i,
+      h4 {
+        color: white;
+        margin: 5px 0;
+      }
+    }
+  }
+  &:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+  }
+}
+
+.card_ga {
+  transition: 0.1s;
+  width: 45%;
+  height: 225px;
+  border-radius: 25px;
+  overflow: hidden;
+  a {
+    .card_header {
+      height: 50%;
+      background-color: var(--warning);
+      i,
+      h2 {
+        color: white;
+        margin: 5px 0;
+      }
+      i {
+        font-size: 150px;
+        opacity: calc(0.8);
+        rotate: 20deg;
+      }
+    }
+    .card_unset {
+      height: 50%;
+      background-color: var(--warning);
+      filter: grayscale(80%);
+      i,
+      h4 {
+        color: white;
+        margin: 5px 0;
+      }
+    }
+  }
+  &:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
   }
 }

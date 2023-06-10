@@ -1,7 +1,36 @@
 .primary {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 .secondary {
-    color: var(--secondary);
+  color: var(--secondary);
 }
+
+.success {
+  color: var(--success);
+}
+
+.warning {
+  color: var(--warning);
+}
+
+.danger {
+  color: var(--danger);
+}
+
+.divider {
+  color: var(--divider);
+}
+
+.box-shadow {
+    box-shadow: var(--box-shadow);
+}
+
+.little-bs {
+    box-shadow: var(--little-bs)
+}
+
+// .active {
+//   filter: brightness(2);
+//   font-weight: bold;
+// }

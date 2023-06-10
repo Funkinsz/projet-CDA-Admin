@@ -16,11 +16,11 @@ function App() {
               <Header />
               <div className={`${s.container} d-flex flex-fill`}>
                 <Sidebar />
-                <div className={`${s.contain} ${styles.contain}`}>
+                <div className={`${s.contain}`}>
                   <NavLink to="/">
                     <h2 className={`${s.title}`}>HOMEPAGE</h2>
                   </NavLink>
-                <Outlet />
+                  <Outlet />
                 </div>
               </div>
             </div>

@@ -1,0 +1,36 @@
+.contain {
+  width: 100%;
+  padding-top: 1px;
+  height: 100%;
+}
+
+table {
+  width: 90%;
+  thead,
+  tbody {
+    width: 100%;
+    tr {
+      width: 100%;
+      th,
+      td {
+        flex: 1;
+        // background-color: var(--primary);
+        // color: var(--primary);
+        padding: 5px;
+        margin: 5px;
+      }
+      th {
+        border-bottom: solid 3px var(--primary);
+        filter: grayscale(50%);
+        margin: 0;
+      }
+      &:hover {
+        filter: opacity(0.75);
+        cursor: pointer;
+      }
+    }
+    tr:nth-child(even) {
+      background-color: #9f9f9f9c;
+    }
+  }
+}

@@ -7,5 +7,5 @@ export default function ProtectedRoute({ children }) {
 
   console.log(admin);
 
-  return admin ? children : <Navigate to="/" />;
+  return admin ? <Navigate to="/" /> : children  
 }
