@@ -22,7 +22,7 @@ export default function HomePage() {
         </NavLink>
       </div>
 
-      <div className={`${s.card_adds} little-bs m20`}>
+      <div className={`${s.card_adds} little-bs m20`} style={{backgroundImage: 'url()'}}>
         <NavLink to='/adds'>
           <div className={`${s.card_header} d-flex aic jcsb p20`}>
             <h2>ADDS</h2>

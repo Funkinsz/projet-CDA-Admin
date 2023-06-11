@@ -1,26 +1,35 @@
 import styles from "./user.module.scss";
 import s from "../../homepage.module.scss";
 import { NavLink } from "react-router-dom";
-import { getUsers } from "../../../../apis/users";
+import { getUsers, updateUser } from "../../../../apis/users";
 import { useEffect, useState } from "react";
+import OneUser from "./components/oneUser";
 
 export default function User() {
   const [u, setU] = useState([]);
 
-  const users = async () => {
-    try {
-      const allUser = await getUsers();
-      setU(allUser);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   useEffect(() => {
+    async function users() {
+      try {
+        const allUser = await getUsers();
+        setU(allUser);
+      } catch (error) {
+        console.error(error);
+      }
+    }
     users();
   }, []);
 
-  console.log(u);
+  async function updateOneUser(v) {
+    await updateUser(v);
+    const allUser = await getUsers();
+    setU(allUser);
+    console.log("refresh");
+  }
+
+  // useEffect(() => {
+  //   updateOneUser();
+  // }, []);
 
   return (
     <div className={`${s.contain} ${styles.contain}`}>
@@ -38,19 +47,13 @@ export default function User() {
               <th>NOM</th>
               <th>PRENOM</th>
               <th>TYPE</th>
+              <th>ACTIONS</th>
             </tr>
           </thead>
           <tbody className="d-flex flex-column jcsb">
             {u &&
               u.map((a, i) => (
-                <tr className="d-flex jcsb">
-                  <td>{a.id_user}</td>
-                  <td>{a.surname}</td>
-                  <td>{a.email}</td>
-                  <td>{a.name}</td>
-                  <td>{a.firstname}</td>
-                  <td>{a.user_type}</td>
-                </tr>
+                <OneUser user={a} key={i} updateOneUser={updateOneUser} />
               ))}
           </tbody>
         </table>
