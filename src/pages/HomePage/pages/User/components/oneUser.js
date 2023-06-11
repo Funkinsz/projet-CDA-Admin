@@ -3,7 +3,6 @@ import s from "../user.module.scss";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { updateUser } from "../../../../../apis/users";
 
 export default function OneUser({ user, key, updateOneUser }) {
   const [edit, setEdit] = useState(false);
