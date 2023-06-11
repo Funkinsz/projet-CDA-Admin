@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { AuthContext } from "../../context";
-import s from "./homepage.module.scss";
+import { AuthContext } from "../../../context";
+import s from "../homepage.module.scss";
 import { Link, NavLink } from "react-router-dom";
 
 export default function HomePage() {
@@ -22,7 +22,7 @@ export default function HomePage() {
         </NavLink>
       </div>
 
-      <div className={`${s.card_adds} little-bs m20`} style={{backgroundImage: 'url()'}}>
+      <div className={`${s.card_adds} little-bs m20`}>
         <NavLink to='/adds'>
           <div className={`${s.card_header} d-flex aic jcsb p20`}>
             <h2>ADDS</h2>

@@ -1,7 +1,7 @@
 import styles from "./user.module.scss";
-import s from "../../homepage.module.scss";
+import s from "../../../homepage.module.scss";
 import { NavLink } from "react-router-dom";
-import { getUsers, updateUser } from "../../../../apis/users";
+import { getUsers, updateUser } from "../../../../../apis/users";
 import { useEffect, useState } from "react";
 import OneUser from "./components/oneUser";
 

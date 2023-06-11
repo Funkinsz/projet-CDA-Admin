@@ -3,8 +3,9 @@ import App from "../App";
 import Log from "../pages/Log/Log";
 import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
 import { adminLoader } from "../loader/adminLoader";
-import Homepage from "../pages/HomePage/HomePage";
-import User from "../pages/HomePage/pages/User/user";
+import HomePage from "../pages/Dashboard/Homepage/HomePage";
+import User from "../pages/Dashboard/Homepage/pages/User/user";
+import Dashboard from "../pages/Dashboard/Dashboard";
 
 export const router = createBrowserRouter([
   {
@@ -14,19 +15,31 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/log",
+        element: <Log />,
+      },
+      {
+        path: "/",
         element: (
           <ProtectedRoute>
-            <Log />
+            <Dashboard />
           </ProtectedRoute>
         ),
       },
       {
-        path: "/",
-        element: <Homepage />,
+        path: "/homepage",
+        element: (
+          <ProtectedRoute>
+            <HomePage />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/user",
-        element: <User />,
+        element: (
+          <ProtectedRoute>
+            <User />,
+          </ProtectedRoute>
+        ),
       },
     ],
   },

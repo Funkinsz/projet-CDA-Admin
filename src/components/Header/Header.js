@@ -1,7 +1,10 @@
 import { NavLink } from "react-router-dom";
-import s from '../../pages/HomePage/homepage.module.scss'
+import s from '../../pages/Dashboard/homepage.module.scss'
+import { AuthContext } from "../../context";
+import { useContext } from "react";
 
 export default function Header() {
+  const {signout} = useContext(AuthContext)
   return (
     <nav className="d-flex aic jcsb">
       <h1 className="m10">ESPACE ADMIN</h1>
@@ -16,7 +19,7 @@ export default function Header() {
           <input type="text" placeholder="search..." />
           <i className="fa-solid fa-magnifying-glass"></i>
         </div>
-        <NavLink className="m20">
+        <NavLink onClick={() => signout()} to='/log' className="m20">
           <i className="fa-solid fa-right-from-bracket"></i>
         </NavLink>
       </ul>
