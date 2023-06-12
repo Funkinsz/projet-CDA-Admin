@@ -11,7 +11,7 @@ export async function signin(credentials) {
 
   if (response.ok) {
     const responseFromBack = await response.json();
-    if (responseFromBack) {
+    if (responseFromBack === "ban") {
       return responseFromBack;
     } else {
       throw responseFromBack;
@@ -22,7 +22,7 @@ export async function signin(credentials) {
 }
 
 export async function getCurrentAdmin() {
-  const response = await fetch(`${API_USERS}/current`, {
+  const response = await fetch(`api/admin/current`, {
     credentials: "include",
   });
   return await response.json();

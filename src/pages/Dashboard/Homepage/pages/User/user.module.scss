@@ -9,7 +9,8 @@ table {
   thead,
   tbody {
     width: 100%;
-    tr, form {
+    tr,
+    form {
       width: 100%;
       th,
       td {
@@ -58,6 +59,38 @@ table {
           }
           &:hover {
             background-color: var(--danger);
+            color: white;
+          }
+        }
+        .btn_warning {
+          width: 50%;
+          height: 35px;
+          margin: 5px;
+          border-radius: 5px;
+          color: var(--warning);
+          background-color: white;
+          border: 1px solid var(--warning);
+          i {
+            font-size: 16px;
+          }
+          &:hover {
+            background-color: var(--warning);
+            color: white;
+          }
+        }
+        .btn_success {
+          width: 50%;
+          height: 35px;
+          margin: 5px;
+          border-radius: 5px;
+          color: var(--success);
+          background-color: white;
+          border: 1px solid var(--success);
+          i {
+            font-size: 16px;
+          }
+          &:hover {
+            background-color: var(--success);
             color: white;
           }
         }

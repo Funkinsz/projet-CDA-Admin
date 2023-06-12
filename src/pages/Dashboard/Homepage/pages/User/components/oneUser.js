@@ -4,7 +4,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 
-export default function OneUser({ user, key, updateOneUser }) {
+export default function OneUser({ user, key, updateOneUser, banOneUser }) {
   const [edit, setEdit] = useState(false);
 
   const validationSchema = yup.object({
@@ -44,28 +44,52 @@ export default function OneUser({ user, key, updateOneUser }) {
     setEdit(!edit);
   }
 
+  function handleBan() {
+    banOneUser(user);
+  }
+
   return (
     <>
       {edit === false ? (
         <tr className="d-flex jcsb">
-          <td key={key}>{user.id_user}</td>
-          <td>{user.surname}</td>
-          <td>{user.email}</td>
-          <td>{user.name}</td>
-          <td>{user.firstname}</td>
-          <td>{user.user_type}</td>
+          <td className={user.user_role < 0 ? `danger` : ""} key={key}>
+            {user.id_user}
+          </td>
+          <td className={user.user_role < 0 ? `danger` : ""}>{user.surname}</td>
+          <td className={user.user_role < 0 ? `danger` : ""}>{user.email}</td>
+          <td className={user.user_role < 0 ? `danger` : ""}>{user.name}</td>
+          <td className={user.user_role < 0 ? `danger` : ""}>
+            {user.firstname}
+          </td>
+          <td className={user.user_role < 0 ? `danger` : ""}>
+            {user.user_type}
+          </td>
           <td>
             <button onClick={handleEdit} className={`${s.btn_update}`}>
               <i className="fa-solid fa-user-pen"></i>
             </button>
-            <button className={`${s.btn_delete}`}>
-              <i className="fa-solid fa-user-slash"></i>
-            </button>
+            {user.user_role >= 0 ? (
+              <button onClick={handleBan} className={`${s.btn_delete}`}>
+                <i className="fa-solid fa-user-slash"></i>
+              </button>
+            ) : (
+              <button onClick={handleBan} className={`${s.btn_warning}`}>
+                <i className="fa-solid fa-user-check"></i>
+              </button>
+            )}
           </td>
         </tr>
       ) : (
         <tr className="d-flex jcsb">
-          <td key={key}><input type="text" {...register("id_user")} defaultValue={user.id_user} style={{visibility: 'hidden', position: 'absolute'}} />{user.id_user}</td>
+          <td key={key}>
+            <input
+              type="text"
+              {...register("id_user")}
+              defaultValue={user.id_user}
+              style={{ visibility: "hidden", position: "absolute" }}
+            />
+            {user.id_user}
+          </td>
           <td className="flex-column">
             <input
               {...register("surname")}
@@ -125,15 +149,13 @@ export default function OneUser({ user, key, updateOneUser }) {
           <td>
             <button
               onClick={handleSubmit(onSubmit)}
-              className={`${s.btn_update}`}
-            >
+              className={`${s.btn_update}`}>
               <i className="fa-solid fa-check"></i>
             </button>
             <button
               onClick={handleEdit}
               type="button"
-              className={`${s.btn_delete}`}
-            >
+              className={`${s.btn_delete}`}>
               <i className="fa-solid fa-xmark"></i>
             </button>
           </td>

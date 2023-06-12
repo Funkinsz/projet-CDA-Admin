@@ -1,7 +1,7 @@
 import styles from "./user.module.scss";
 import s from "../../../homepage.module.scss";
 import { NavLink } from "react-router-dom";
-import { getUsers, updateUser } from "../../../../../apis/users";
+import { banUser, getUsers, updateUser } from "../../../../../apis/users";
 import { useEffect, useState } from "react";
 import OneUser from "./components/oneUser";
 
@@ -24,12 +24,13 @@ export default function User() {
     await updateUser(v);
     const allUser = await getUsers();
     setU(allUser);
-    console.log("refresh");
   }
 
-  // useEffect(() => {
-  //   updateOneUser();
-  // }, []);
+  async function banOneUser(v) {
+    await banUser(v);
+    const allUser = await getUsers();
+    setU(allUser);
+  }
 
   return (
     <div className={`${s.contain} ${styles.contain}`}>
@@ -53,7 +54,12 @@ export default function User() {
           <tbody className="d-flex flex-column jcsb">
             {u &&
               u.map((a, i) => (
-                <OneUser user={a} key={i} updateOneUser={updateOneUser} />
+                <OneUser
+                  user={a}
+                  key={i}
+                  updateOneUser={updateOneUser}
+                  banOneUser={banOneUser}
+                />
               ))}
           </tbody>
         </table>

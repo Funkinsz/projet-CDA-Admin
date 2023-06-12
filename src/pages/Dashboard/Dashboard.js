@@ -12,8 +12,8 @@ export default function Dashboard() {
         <div className={`${s.contain}`}>
           <NavLink to="/homepage">
             <h2 className={`${s.title}`}>HOMEPAGE</h2>
-            <Outlet />
           </NavLink>
+          <Outlet />
         </div>
       </div>
     </div>

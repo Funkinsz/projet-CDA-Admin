@@ -25,3 +25,14 @@ export async function updateUser(v) {
     throw new Error("Update User API error");
   }
 }
+
+export async function banUser(v) {
+  console.log(v);
+  const response = await fetch(`${API_USERS}/banUser?id=${v.id_user}&role=${v.user_role}`)
+  const responseFromBack = await response.json()
+  if (response.ok) {
+    return responseFromBack
+  } else {
+    throw new Error("Ban User API error")
+  }
+}

@@ -102,26 +102,26 @@
 
 .card {
   transition: 0.1s;
-  width: 45%;
-  height: 225px;
+  width: 40%;
+  height: 300px;
   border-radius: 25px;
   overflow: hidden;
   a {
     .card_header {
-      height: 50%;
+      height: 66%;
       i,
       h2 {
         color: white;
         margin: 5px 0;
       }
       i {
-        font-size: 200px;
+        font-size: 300px;
         opacity: calc(0.8);
         rotate: 15deg;
       }
     }
     .card_unset {
-      height: 50%;
+      height: 34%;
       filter: grayscale(80%);
       i,
       h4 {

@@ -3,9 +3,10 @@ import App from "../App";
 import Log from "../pages/Log/Log";
 import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
 import { adminLoader } from "../loader/adminLoader";
-import HomePage from "../pages/Dashboard/Homepage/HomePage";
-import User from "../pages/Dashboard/Homepage/pages/User/user";
 import Dashboard from "../pages/Dashboard/Dashboard";
+import HomePage from "../pages/Dashboard/Homepage/HomePage";
+import User from "../pages/Dashboard/Homepage/pages/User/User";
+import Adds from "../pages/Dashboard/Homepage/pages/Adds/Adds";
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
             path: "/user",
             element: <User />,
           },
+          {
+            path: "/adds",
+            element: <Adds />
+          }
         ],
       },
     ],
