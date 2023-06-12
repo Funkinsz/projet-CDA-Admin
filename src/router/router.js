@@ -24,22 +24,17 @@ export const router = createBrowserRouter([
             <Dashboard />
           </ProtectedRoute>
         ),
-      },
-      {
-        path: "/homepage",
-        element: (
-          <ProtectedRoute>
-            <HomePage />
-          </ProtectedRoute>
-        ),
-      },
-      {
-        path: "/user",
-        element: (
-          <ProtectedRoute>
-            <User />,
-          </ProtectedRoute>
-        ),
+        children: [
+          {
+            path: "/homepage",
+            index: true,
+            element: <HomePage />,
+          },
+          {
+            path: "/user",
+            element: <User />,
+          },
+        ],
       },
     ],
   },

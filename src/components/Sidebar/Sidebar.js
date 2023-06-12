@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import s from "../../pages/Dashboard/homepage.module.scss";
-import HomePage from "../../pages/Dashboard/Homepage/HomePage";
 
 export default function Sidebar() {
   return (
@@ -36,7 +35,6 @@ export default function Sidebar() {
           </NavLink>
         </ul>
       </div>
-      <HomePage />
     </>
   );
 }

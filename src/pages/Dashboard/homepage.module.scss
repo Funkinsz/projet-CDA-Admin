@@ -84,7 +84,23 @@
   }
 }
 
-.card_user {
+.background_primary {
+  background-color: var(--primary);
+}
+
+.background_warning {
+  background-color: var(--warning);
+}
+
+.background_success {
+  background-color: var(--success);
+}
+
+.background_danger {
+  background-color: var(--danger);
+}
+
+.card {
   transition: 0.1s;
   width: 45%;
   height: 225px;
@@ -93,7 +109,6 @@
   a {
     .card_header {
       height: 50%;
-      background-color: var(--primary);
       i,
       h2 {
         color: white;
@@ -107,121 +122,6 @@
     }
     .card_unset {
       height: 50%;
-      background-color: var(--primary);
-      filter: grayscale(80%);
-      i,
-      h4 {
-        color: white;
-        margin: 5px 0;
-      }
-    }
-  }
-  &:hover {
-    transform: scale(1.05);
-    transition: 0.2s;
-  }
-}
-
-.card_adds {
-  transition: 0.1s;
-  width: 45%;
-  height: 225px;
-
-  border-radius: 25px;
-  color: white;
-  overflow: hidden;
-  .card_header {
-    height: 50%;
-    background-color: var(--success);
-    i,
-    h2 {
-      color: white;
-      margin: 5px 0;
-    }
-    i {
-      font-size: 200px;
-      opacity: calc(0.8);
-      rotate: 15deg;
-    }
-  }
-  .card_unset {
-    height: 50%;
-    background-color: var(--success);
-    filter: grayscale(80%);
-    i,
-    h4 {
-      color: white;
-      margin: 5px 0;
-    }
-  }
-  &:hover {
-    transform: scale(1.05);
-    transition: 0.2s;
-  }
-}
-
-.card_facture {
-  transition: 0.1s;
-  width: 45%;
-  height: 225px;
-  border-radius: 25px;
-  overflow: hidden;
-  a {
-    .card_header {
-      height: 50%;
-      background-color: var(--danger);
-      i,
-      h2 {
-        color: white;
-        margin: 5px 0;
-      }
-      i {
-        font-size: 200px;
-        opacity: calc(0.8);
-        rotate: 15deg;
-      }
-    }
-    .card_unset {
-      height: 50%;
-      background-color: var(--danger);
-      filter: grayscale(80%);
-      i,
-      h4 {
-        color: white;
-        margin: 5px 0;
-      }
-    }
-  }
-  &:hover {
-    transform: scale(1.05);
-    transition: 0.2s;
-  }
-}
-
-.card_ga {
-  transition: 0.1s;
-  width: 45%;
-  height: 225px;
-  border-radius: 25px;
-  overflow: hidden;
-  a {
-    .card_header {
-      height: 50%;
-      background-color: var(--warning);
-      i,
-      h2 {
-        color: white;
-        margin: 5px 0;
-      }
-      i {
-        font-size: 200px;
-        opacity: calc(0.8);
-        rotate: 15deg;
-      }
-    }
-    .card_unset {
-      height: 50%;
-      background-color: var(--warning);
       filter: grayscale(80%);
       i,
       h4 {
