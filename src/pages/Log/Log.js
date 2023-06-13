@@ -18,6 +18,9 @@ export default function Log() {
   const { signin, admin } = useContext(AuthContext);
   const r = Math.floor(Math.random() * 8);
 
+  console.log(admin);
+
+
   const p = [p1, p2, p3, p4, p5, p6, p7, p8];
 
   document.body.style.overflow = "hidden";

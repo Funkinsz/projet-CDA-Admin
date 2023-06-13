@@ -8,6 +8,8 @@ export default function AuthProvider({ children }) {
   const initialadmin = useLoaderData();
   const [admin, setAdmin] = useState(initialadmin);
 
+  console.log(admin);
+
   async function signin(credentials) {
     const newAdmin = await login(credentials);
     setAdmin(newAdmin);

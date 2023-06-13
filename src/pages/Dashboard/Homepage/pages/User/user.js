@@ -42,7 +42,7 @@ export default function User() {
         <table className="d-flex flex-column jcsb">
           <thead>
             <tr className="d-flex jcsb">
-              <th>ID</th>
+              <th className={`${styles.td_id}`}>ID</th>
               <th>PSEUDO</th>
               <th>EMAIL</th>
               <th>NOM</th>

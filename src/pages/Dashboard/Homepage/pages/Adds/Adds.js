@@ -44,12 +44,13 @@ export default function Adds() {
         <table className="d-flex flex-column jcsb">
           <thead>
             <tr className="d-flex jcsb">
-              <th>ID</th>
+              <th className={`${styles.td_id}`}>ID</th>
               <th>TITLE</th>
-              <th>CONTENT</th>
-              <th>PRICE</th>
-              <th>SONO</th>
-              <th>ART</th>
+              <th className={`${styles.td_content}`}>CONTENT</th>
+              <th className={`${styles.td_id}`}>PRICE</th>
+              <th className={`${styles.td_id}`}>SONO</th>
+              <th className={`${styles.td_id}`}>ART</th>
+              <th>ACTIONS</th>
             </tr>
           </thead>
           <tbody className="d-flex flex-column jcsb">

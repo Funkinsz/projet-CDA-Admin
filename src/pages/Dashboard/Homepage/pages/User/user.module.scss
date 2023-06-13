@@ -14,14 +14,18 @@ table {
       width: 100%;
       th,
       td {
-        flex: 1;
-        padding: 5px;
-        margin: 5px;
+        flex: 2;
+        padding: 10px 5px;
         display: flex;
         justify-content: space-around;
         align-items: center;
         input {
           width: 100%;
+          padding: 5px;
+          border: none;
+          border-bottom: 1px solid grey;
+        }
+        select {
           padding: 5px;
           border: none;
           border-bottom: 1px solid grey;
@@ -100,8 +104,16 @@ table {
         filter: grayscale(50%);
         margin: 0;
       }
+      .td_id {
+        flex: 1;
+        display: flex;
+      }
+      .td_content {
+        display: flex;
+        flex: 6;
+      }
       &:hover {
-        font-weight: bold;
+        font-weight: 500;
         color: var(--primary);
         td {
           button {

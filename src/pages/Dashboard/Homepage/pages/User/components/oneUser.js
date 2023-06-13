@@ -52,10 +52,10 @@ export default function OneUser({ user, key, updateOneUser, banOneUser }) {
     <>
       {edit === false ? (
         <tr className="d-flex jcsb">
-          <td className={user.user_role < 0 ? `danger` : ""} key={key}>
+          <td className={`${user.user_role < 0 ? `danger` : ""} ${s.td_id}`} key={key}>
             {user.id_user}
           </td>
-          <td className={user.user_role < 0 ? `danger` : ""}>{user.surname}</td>
+          <td className={`${user.user_role < 0 ? `danger` : ""}`}>{user.surname}</td>
           <td className={user.user_role < 0 ? `danger` : ""}>{user.email}</td>
           <td className={user.user_role < 0 ? `danger` : ""}>{user.name}</td>
           <td className={user.user_role < 0 ? `danger` : ""}>
@@ -81,7 +81,7 @@ export default function OneUser({ user, key, updateOneUser, banOneUser }) {
         </tr>
       ) : (
         <tr className="d-flex jcsb">
-          <td key={key}>
+          <td key={key} className={s.td_id}>
             <input
               type="text"
               {...register("id_user")}
