@@ -11,12 +11,13 @@ export async function getAdds() {
 }
 
 export async function updateAdd(v) {
+  console.log(v);
   const response = await fetch(API + "/updateAdd", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(),
+    body: JSON.stringify(v),
   });
   const responseFromBack = await response.json();
   if (response.ok) {
@@ -27,11 +28,12 @@ export async function updateAdd(v) {
 }
 
 export async function deleteAdd(v) {
-    const response = await fetch(API+"/deleteAdd")
-    const responseFromBack = await response.json()
-    if (response.ok) {
-        return responseFromBack
-    } else {
-        throw new Error ("Delete Add API error")
-    }
+  console.log(v);
+  const response = await fetch(API + "/deleteAdd?id=" + v);
+  const responseFromBack = await response.json();
+  if (response.ok) {
+    return responseFromBack;
+  } else {
+    throw new Error("Delete Add API error");
+  }
 }
