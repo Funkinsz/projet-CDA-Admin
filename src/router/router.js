@@ -7,6 +7,7 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import HomePage from "../pages/Dashboard/Homepage/HomePage";
 import User from "../pages/Dashboard/Homepage/pages/User/User";
 import Adds from "../pages/Dashboard/Homepage/pages/Adds/Adds";
+import Styles from "../pages/Dashboard/Homepage/pages/Styles/Styles";
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
           {
             path: "/adds",
             element: <Adds />
+          },
+          {
+            path: "/styles",
+            element: <Styles />
           }
         ],
       },

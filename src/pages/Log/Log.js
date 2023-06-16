@@ -16,10 +16,10 @@ import { useContext } from "react";
 
 export default function Log() {
   const { signin, admin } = useContext(AuthContext);
-  const r = Math.floor(Math.random() * 8);
 
   console.log(admin);
 
+  const r = Math.floor(Math.random() * 8);
 
   const p = [p1, p2, p3, p4, p5, p6, p7, p8];
 
@@ -64,7 +64,9 @@ export default function Log() {
   return (
     <>
       {admin ? (
-        <Navigate to="/homepage" />
+        <>
+          <Navigate to="/homepage" />
+        </>
       ) : (
         <div className={`${s.content} d-flex flex-fill flex-column aic jcc`}>
           <img src={p[r]} alt="" />
