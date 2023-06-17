@@ -5,8 +5,8 @@ import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
 import { adminLoader } from "../loader/adminLoader";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import HomePage from "../pages/Dashboard/Homepage/HomePage";
-import User from "../pages/Dashboard/Homepage/pages/User/User";
 import Adds from "../pages/Dashboard/Homepage/pages/Adds/Adds";
+import User from "../pages/Dashboard/Homepage/pages/User/user";
 
 export const router = createBrowserRouter([
   {
