@@ -50,6 +50,10 @@ export default function Styles() {
     }
   }
 
+  async function handleClear() {
+    setValue("")
+  }
+
   return (
     <div className={`${s.contain} ${styles.contain}`}>
       <NavLink to={"/styles"}>
@@ -76,7 +80,7 @@ export default function Styles() {
             <button onClick={handleClick} className={`${styles.btn_success}`}>
               <i className="fa-solid fa-check"></i>
             </button>
-            <button className={`${styles.btn_delete}`}>
+            <button onClick={handleClear} className={`${styles.btn_delete}`}>
               <i className="fa-solid fa-xmark"></i>
             </button>
           </div>
