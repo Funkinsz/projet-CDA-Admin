@@ -36,10 +36,10 @@ export default function HomePage() {
       </div>
 
       <div className={`${s.card} little-bs m20`}>
-        <NavLink>
+        <NavLink to={'/styles'}>
           <div className={`${s.card_header} ${s.background_danger} d-flex aic jcsb p20`}>
-            <h2>BILLS</h2>
-            <i className="fa-solid fa-credit-card"></i>
+            <h2>STYLES</h2>
+            <i className="fa-solid fa-music"></i>
           </div>
           <div className={`${s.card_unset} ${s.background_danger} d-flex aic jcsb p20`}>
             <h4>View details</h4>

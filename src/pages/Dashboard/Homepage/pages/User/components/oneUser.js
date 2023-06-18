@@ -52,10 +52,14 @@ export default function OneUser({ user, key, updateOneUser, banOneUser }) {
     <>
       {edit === false ? (
         <tr className="d-flex jcsb">
-          <td className={`${user.user_role < 0 ? `danger` : ""} ${s.td_id}`} key={key}>
+          <td
+            className={`${user.user_role < 0 ? `danger` : ""} ${s.td_id}`}
+            key={key}>
             {user.id_user}
           </td>
-          <td className={`${user.user_role < 0 ? `danger` : ""}`}>{user.surname}</td>
+          <td className={`${user.user_role < 0 ? `danger` : ""}`}>
+            {user.surname}
+          </td>
           <td className={user.user_role < 0 ? `danger` : ""}>{user.email}</td>
           <td className={user.user_role < 0 ? `danger` : ""}>{user.name}</td>
           <td className={user.user_role < 0 ? `danger` : ""}>
@@ -65,15 +69,15 @@ export default function OneUser({ user, key, updateOneUser, banOneUser }) {
             {user.user_type}
           </td>
           <td>
-            <button onClick={handleEdit} className={`${s.btn_update}`}>
+            <button onClick={handleEdit} className={`${s.btn_update} ${s.btn}`}>
               <i className="fa-solid fa-user-pen"></i>
             </button>
             {user.user_role >= 0 ? (
-              <button onClick={handleBan} className={`${s.btn_delete}`}>
+              <button onClick={handleBan} className={`${s.btn_delete} ${s.btn}`}>
                 <i className="fa-solid fa-user-slash"></i>
               </button>
             ) : (
-              <button onClick={handleBan} className={`${s.btn_warning}`}>
+              <button onClick={handleBan} className={`${s.btn_warning} ${s.btn}`}>
                 <i className="fa-solid fa-user-check"></i>
               </button>
             )}
@@ -149,13 +153,13 @@ export default function OneUser({ user, key, updateOneUser, banOneUser }) {
           <td>
             <button
               onClick={handleSubmit(onSubmit)}
-              className={`${s.btn_update}`}>
+              className={`${s.btn_update} ${s.btn}`}>
               <i className="fa-solid fa-check"></i>
             </button>
             <button
               onClick={handleEdit}
               type="button"
-              className={`${s.btn_delete}`}>
+              className={`${s.btn_delete} ${s.btn}`}>
               <i className="fa-solid fa-xmark"></i>
             </button>
           </td>

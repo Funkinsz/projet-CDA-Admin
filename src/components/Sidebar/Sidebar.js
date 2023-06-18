@@ -25,12 +25,12 @@ export default function Sidebar() {
             <span className="secondary">USERS</span>
             <i className="fa-solid fa-chevron-right"></i>
           </NavLink>
-          <NavLink className="d-flex aic jcsb m10">
+          <NavLink to={"/adds"} className="d-flex aic jcsb m10">
             <span className="secondary">ADDS</span>
             <i className="fa-solid fa-chevron-right"></i>
           </NavLink>
-          <NavLink className="d-flex aic jcsb m10">
-            <span className="secondary">CONNECTION</span>
+          <NavLink to={"/styles"} className="d-flex aic jcsb m10">
+            <span className="secondary">STYLES</span>
             <i className="fa-solid fa-chevron-right"></i>
           </NavLink>
         </ul>

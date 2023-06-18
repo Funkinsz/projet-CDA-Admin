@@ -9,8 +9,7 @@ table {
   thead,
   tbody {
     width: 100%;
-    tr,
-    form {
+    tr {
       width: 100%;
       th,
       td {
@@ -43,70 +42,8 @@ table {
           padding: 5px;
           margin: 10px 0;
         }
-        .btn_update {
+        .btn {
           width: 50%;
-          height: 35px;
-          margin: 5px;
-          border-radius: 5px;
-          color: var(--primary);
-          background-color: white;
-          border: 1px solid var(--primary);
-          font-size: 18px;
-          i {
-            font-size: 16px;
-          }
-          &:hover {
-            background-color: var(--primary);
-            color: white;
-          }
-        }
-        .btn_delete {
-          width: 50%;
-          height: 35px;
-          margin: 5px;
-          border-radius: 5px;
-          color: var(--danger);
-          background-color: white;
-          border: 1px solid var(--danger);
-          i {
-            font-size: 16px;
-          }
-          &:hover {
-            background-color: var(--danger);
-            color: white;
-          }
-        }
-        .btn_warning {
-          width: 50%;
-          height: 35px;
-          margin: 5px;
-          border-radius: 5px;
-          color: var(--warning);
-          background-color: white;
-          border: 1px solid var(--warning);
-          i {
-            font-size: 16px;
-          }
-          &:hover {
-            background-color: var(--warning);
-            color: white;
-          }
-        }
-        .btn_success {
-          width: 50%;
-          height: 35px;
-          margin: 5px;
-          border-radius: 5px;
-          color: var(--success);
-          background-color: white;
-          border: 1px solid var(--success);
-          i {
-            font-size: 16px;
-          }
-          &:hover {
-            background-color: var(--success);
-            color: white;
-          }
         }
       }
       th {
@@ -135,5 +72,115 @@ table {
     tr:nth-child(even) {
       background-color: #9f9f9f2a;
     }
+  }
+}
+
+.add_input {
+  width: 90%;
+  margin: 15px 0;
+  padding: 15px 45px;
+  border: 1px solid var(--secondary);
+  border-radius: 5px;
+  background-color: #9f9f9f2a;
+  input {
+    padding: 0 5px;
+    margin: 5px;
+    height: 35px;
+  }
+  .search {
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid black;
+    input {
+      margin: 0;
+      height: 100%;
+      border: none;
+      background-color: white;
+    }
+    input:focus {
+      outline: none;
+    }
+    i {
+      margin: auto;
+      padding: 0;
+      padding: 15px;
+      height: 100%;
+      color: white;
+      background-color: var(--primary);
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.btn_update {
+  // width: 50%;
+  height: 35px;
+  margin: 5px;
+  border-radius: 5px;
+  color: var(--primary);
+  background-color: white;
+  border: 1px solid var(--primary);
+  font-size: 18px;
+  i {
+    font-size: 16px;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: var(--primary);
+    color: white;
+  }
+}
+.btn_delete {
+  // width: 50%;
+  height: 35px;
+  margin: 5px;
+  border-radius: 5px;
+  color: var(--danger);
+  background-color: white;
+  border: 1px solid var(--danger);
+  i {
+    font-size: 16px;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: var(--danger);
+    color: white;
+  }
+}
+.btn_warning {
+  // width: 50%;
+  height: 35px;
+  margin: 5px;
+  border-radius: 5px;
+  color: var(--warning);
+  background-color: white;
+  border: 1px solid var(--warning);
+  i {
+    font-size: 16px;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: var(--warning);
+    color: white;
+  }
+}
+.btn_success {
+  // width: 50%;
+  height: 35px;
+  margin: 5px;
+  border-radius: 5px;
+  color: var(--success);
+  background-color: white;
+  border: 1px solid var(--success);
+  i {
+    font-size: 16px;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: var(--success);
+    color: white;
   }
 }

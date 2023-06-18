@@ -67,10 +67,10 @@ export default function OneAdds({ add, key, updateOneAdd, deleteOneAdd }) {
           <td className={`${s.td_id}`}>{add.sono === 1 ? "✔️" : "❌"}</td>
           <td className={`${s.td_id}`}>{add.number_art}</td>
           <td>
-            <button onClick={handleEdit} className={`${s.btn_update}`}>
+            <button onClick={handleEdit} className={`${s.btn_update} ${s.btn}`}>
               <i className="fa-solid fa-calendar-plus"></i>
             </button>
-            <button onClick={handleDelete} className={`${s.btn_delete}`}>
+            <button onClick={handleDelete} className={`${s.btn_delete} ${s.btn}`}>
               <i className="fa-solid fa-calendar-xmark"></i>
             </button>
           </td>
@@ -128,10 +128,10 @@ export default function OneAdds({ add, key, updateOneAdd, deleteOneAdd }) {
           <td>
             <button
               onClick={handleSubmit(onSubmit)}
-              className={`${s.btn_success}`}>
+              className={`${s.btn_success} ${s.btn}`}>
               <i className="fa-solid fa-check"></i>
             </button>
-            <button onClick={handleEdit} className={`${s.btn_delete}`}>
+            <button onClick={handleEdit} className={`${s.btn_delete} ${s.btn}`}>
               <i className="fa-solid fa-xmark"></i>
             </button>
           </td>
