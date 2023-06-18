@@ -4,7 +4,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 
-export default function OneStyle({ style, key, updateOneStyle, addOneStyle }) {
+export default function OneStyle({ style, key, updateOneStyle }) {
   const [edit, setEdit] = useState(false);
 
   const validationSchema = yup.object({

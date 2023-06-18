@@ -8,6 +8,14 @@ import OneStyle from "./components/oneStyle";
 export default function Styles() {
   const [st, setSt] = useState([]);
   const [value, setValue] = useState("");
+  const [search, setSearch] = useState("");
+
+  async function handleSearch(e) {
+    const searchInput = e.target.value;
+    const convertSearchInput =
+      searchInput.charAt(0).toUpperCase() + searchInput.slice(1);
+    setSearch(convertSearchInput.trim());
+  }
 
   useEffect(() => {
     async function styles() {
@@ -51,7 +59,7 @@ export default function Styles() {
   }
 
   async function handleClear() {
-    setValue("")
+    setValue("");
   }
 
   return (
@@ -65,7 +73,7 @@ export default function Styles() {
       >
         <div className={`${styles.add_input} d-flex jcsb`}>
           <div className={`${styles.search} d-flex aic jcc`}>
-            <input type="text" placeholder="Search..." />
+            <input onChange={handleSearch} value={search} type="text" placeholder="Search..." />
             <i className="fa-solid fa-magnifying-glass"></i>
           </div>
 
@@ -96,9 +104,11 @@ export default function Styles() {
           </thead>
           <tbody className="d-flex flex-column jcsb">
             {st &&
-              st.map((a, i) => (
-                <OneStyle style={a} key={i} updateOneStyle={updateOneStyle} />
-              ))}
+              st
+                .filter((a) => a.name_style.startsWith(search))
+                .map((a, i) => (
+                  <OneStyle style={a} key={i} updateOneStyle={updateOneStyle} />
+                ))}
           </tbody>
         </table>
       </div>
