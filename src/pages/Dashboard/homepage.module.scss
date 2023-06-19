@@ -41,28 +41,35 @@
     .sidebar {
       width: 250px;
       background-color: #333;
-      ul {
+      position: relative;
+      .sticky {
         width: 100%;
-        margin: 10px;
-        .asbar {
-          span {
-            padding: 0 0 0 20px;
-          }
-        }
-        a {
-          padding: 25px 5px;
-          text-decoration: none;
-          &:hover {
-            margin-left: 15px;
-            span,
-            i {
-              color: white;
-              font-weight: bold;
+        ul {
+          position: sticky;
+          top: 0;
+          width: 100%;
+          margin: 0;
+          // height: auto;
+          .asbar {
+            span {
+              padding: 0 0 0 20px;
             }
           }
-        }
-        i {
-          color: var(--secondary);
+          a {
+            padding: 25px 5px;
+            text-decoration: none;
+            &:hover {
+              margin-left: 15px;
+              span,
+              i {
+                color: white;
+                font-weight: bold;
+              }
+            }
+          }
+          i {
+            color: var(--secondary);
+          }
         }
       }
     }

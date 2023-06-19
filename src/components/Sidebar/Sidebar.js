@@ -5,6 +5,8 @@ export default function Sidebar() {
   return (
     <>
       <div className={`${s.sidebar} d-flex jcc`}>
+        <div className={`${s.sticky}`}>
+
         <ul className="d-flex flex-column">
           <NavLink className={`${s.asbar} d-flex aic m10`}>
             <i className="fa-solid fa-gauge-high"></i>
@@ -34,6 +36,7 @@ export default function Sidebar() {
             <i className="fa-solid fa-chevron-right"></i>
           </NavLink>
         </ul>
+        </div>
       </div>
     </>
   );
