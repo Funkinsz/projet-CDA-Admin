@@ -6,8 +6,8 @@ import { adminLoader } from "../loader/adminLoader";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import HomePage from "../pages/Dashboard/Homepage/HomePage";
 import Adds from "../pages/Dashboard/Homepage/pages/Adds/Adds";
-import User from "../pages/Dashboard/Homepage/pages/User/user";
 import Styles from "../pages/Dashboard/Homepage/pages/Styles/Styles";
+import User from "../pages/Dashboard/Homepage/pages/User/User";
 
 export const router = createBrowserRouter([
   {

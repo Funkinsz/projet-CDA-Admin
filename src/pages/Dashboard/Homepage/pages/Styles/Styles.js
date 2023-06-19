@@ -13,7 +13,7 @@ export default function Styles() {
   async function handleSearch(e) {
     const searchInput = e.target.value;
     const convertSearchInput =
-      searchInput.charAt(0).toUpperCase() + searchInput.slice(1);
+      searchInput.charAt(0).toUpperCase() + searchInput.slice(1).toLowerCase();
     setSearch(convertSearchInput.trim());
   }
 
@@ -37,7 +37,9 @@ export default function Styles() {
 
   function handleChange(e) {
     const addValue = e.target.value;
-    setValue(addValue);
+    const convertSearchInput =
+    addValue.charAt(0).toUpperCase() + addValue.slice(1).toLowerCase();
+    setValue(convertSearchInput);
   }
 
   async function addOneStyle() {
@@ -69,12 +71,16 @@ export default function Styles() {
       </NavLink>
 
       <div
-        className={`${styles.table_container} d-flex flex-column flex-fill aic jcc`}
-      >
+        className={`${styles.table_container} d-flex flex-column flex-fill aic jcc`}>
         <div className={`${styles.add_input} d-flex jcsb`}>
           <div className={`${styles.search} d-flex aic jcc`}>
-            <input onChange={handleSearch} value={search} type="text" placeholder="Search..." />
             <i className="fa-solid fa-magnifying-glass"></i>
+            <input
+              onChange={handleSearch}
+              value={search}
+              type="text"
+              placeholder="Search..."
+            />
           </div>
 
           <div className="d-flex aic jcc">

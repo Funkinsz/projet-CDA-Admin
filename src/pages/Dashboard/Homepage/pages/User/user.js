@@ -33,12 +33,12 @@ export default function User() {
   }
 
   return (
-    <div className={`${s.contain} ${styles.contain}`}>
+    <div className={`${styles.contain}`}>
       <NavLink to="/user">
         <h2 className={`${s.title} secondary`}>USERS</h2>
       </NavLink>
 
-      <div className={`${styles.table_container} d-flex flex-fill aic jcc`}>
+      <div className={` d-flex flex-fill aic jcc`}>
         <table className="d-flex flex-column jcsb">
           <thead>
             <tr className="d-flex jcsb">
