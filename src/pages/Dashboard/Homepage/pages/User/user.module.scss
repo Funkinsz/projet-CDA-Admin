@@ -55,6 +55,12 @@ table {
         filter: grayscale(50%);
         margin: 0;
       }
+      .role {
+        i {
+          margin: 0 5px;
+          color: var(--warning);
+        }
+      }
       .td_id {
         flex: 1;
         display: flex;
@@ -64,7 +70,8 @@ table {
         flex: 6;
       }
       &:hover {
-        font-weight: 500;
+        transition: 0.2s;
+        transform: scale(1.02);
         color: var(--primary);
         td {
           button {

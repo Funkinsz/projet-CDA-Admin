@@ -7,6 +7,7 @@ import { useState } from "react";
 export default function OneAdds({ add, key, updateOneAdd, deleteOneAdd }) {
   const [edit, setEdit] = useState(false);
   const [check, setCheck] = useState(add.sono === 1 ? true : false);
+  const [alertDelete, setAlertDelete] = useState(false)
 
   const validationSchema = yup.object({
     id: yup.number(),
@@ -45,17 +46,47 @@ export default function OneAdds({ add, key, updateOneAdd, deleteOneAdd }) {
     setEdit(!edit);
   }
 
+  function verifyDelete() {
+    setAlertDelete(!alertDelete)
+  }
+
   function handleDelete() {
     deleteOneAdd(add.id_ad_pro);
+    setAlertDelete(!alertDelete)
+  }
+
+  function handleCancel() {
+    setAlertDelete(!alertDelete)
   }
 
   function handleCheck() {
     setCheck(!check);
   }
 
-  console.log(check);
   return (
     <>
+          {alertDelete === true && (
+        <div className={`${s.alert} d-flex flex-column aic`}>
+          <div className={`${s.head} d-flex aic jcc`}>
+            <i className="fas fa-circle-info"></i>
+            <h2>SUPPRESSION D'EVENEMENT</h2>
+          </div>
+          <h4 className="d-flex flex-column aic jcc">
+            Attention ! vous etes sur le point de supprimer l'évènement :
+            <strong>
+              {add.content_ad_pro}
+            </strong>
+          </h4>
+          <div className={`${s.btn} d-flex`}>
+            <button onClick={handleDelete} className={`${s.btn_active}`}>
+              SUPPRIMER
+            </button>
+            <button onClick={handleCancel} className={`${s.btn_cancel}`}>
+              ANNULER
+            </button>
+          </div>
+        </div>
+      )}
       {edit === false ? (
         <tr className="d-flex jcsb">
           <td key={key} className={`${s.td_id}`}>
@@ -70,7 +101,7 @@ export default function OneAdds({ add, key, updateOneAdd, deleteOneAdd }) {
             <button onClick={handleEdit} className={`${s.btn_update} ${s.btn}`}>
               <i className="fa-solid fa-calendar-plus"></i>
             </button>
-            <button onClick={handleDelete} className={`${s.btn_delete} ${s.btn}`}>
+            <button onClick={verifyDelete} className={`${s.btn_delete} ${s.btn}`}>
               <i className="fa-solid fa-calendar-xmark"></i>
             </button>
           </td>

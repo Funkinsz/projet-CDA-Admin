@@ -51,7 +51,7 @@ export default function OneUser({ user, key, updateOneUser, banOneUser }) {
   }
 
   function verifyDeban() {
-    setAlertDeban(!alertDeban)
+    setAlertDeban(!alertDeban);
   }
 
   function handleCancel() {
@@ -59,7 +59,7 @@ export default function OneUser({ user, key, updateOneUser, banOneUser }) {
   }
 
   function handleCancelD() {
-    setAlertDeban(!alertDeban)
+    setAlertDeban(!alertDeban);
   }
 
   function handleBan() {
@@ -68,8 +68,8 @@ export default function OneUser({ user, key, updateOneUser, banOneUser }) {
   }
 
   function handleDeban() {
-    banOneUser(user)
-    setAlertDeban(!alertDeban)
+    banOneUser(user);
+    setAlertDeban(!alertDeban);
   }
 
   return (
@@ -82,7 +82,9 @@ export default function OneUser({ user, key, updateOneUser, banOneUser }) {
           </div>
           <h4 className="d-flex flex-column aic jcc">
             Attention ! vous etes sur le point de bannir :
-            <strong>{user.surname}</strong>
+            <strong>
+              {user.surname} : {user.email}
+            </strong>
           </h4>
           <div className={`${s.btn} d-flex`}>
             <button onClick={handleBan} className={`${s.btn_active}`}>
@@ -102,7 +104,9 @@ export default function OneUser({ user, key, updateOneUser, banOneUser }) {
           </div>
           <h4 className="d-flex flex-column aic jcc">
             Attention ! vous etes sur le point de retirer le bannissement de :
-            <strong>{user.surname}</strong>
+            <strong>
+              {user.surname} : {user.email}
+            </strong>
           </h4>
           <div className={`${s.btn} d-flex`}>
             <button onClick={handleDeban} className={`${s.btn_active}`}>
@@ -121,7 +125,9 @@ export default function OneUser({ user, key, updateOneUser, banOneUser }) {
             key={key}>
             {user.id_user}
           </td>
-          <td className={`${user.user_role < 0 ? `danger` : ""}`}>
+          <td
+            className={`${user.user_role < 0 ? `danger` : ""} d-flex jcc aic ${s.role}`}>
+            {user.user_role > 0 && <i className="fa-solid fa-crown"></i>}
             {user.surname}
           </td>
           <td className={user.user_role < 0 ? `danger` : ""}>{user.email}</td>
