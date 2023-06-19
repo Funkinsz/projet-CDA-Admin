@@ -116,8 +116,77 @@ table {
   }
 }
 
+.alert {
+  box-shadow: 0px 0px 100px 20px black;
+  overflow: hidden;
+  border-radius: 5px;
+  z-index: 1;
+  transition: 0.5s;
+  position: absolute;
+  top: 33%;
+  left: 33%;
+  width: 800px;
+  padding: 20px 0;
+  background-color: rgb(90, 68, 0);
+  color: white;
+  .head {
+    filter: none !important;
+    background-color: rgb(172, 129, 0);
+    margin-bottom: 15px;
+    width: 98%;
+    height: 50px;
+    padding: 10px;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    i {
+      margin: 0 5px;
+      font-size: 20px;
+    }
+    h2 {
+      margin: 0 5px;
+    }
+  }
+  h4 {
+    padding: 20px;
+  }
+  .btn {
+    padding: 20px;
+    button {
+      margin: 20px;
+      height: 35px;
+      border-radius: 5px;
+      box-shadow: 3px 2px 5px black;
+      color: white;
+      &:hover {
+        cursor: pointer;
+        border: white solid 1px;
+      }
+    }
+    .btn_active {
+      font-weight: bold;
+      background-color: rgb(90, 68, 0);
+      border: white solid 1px;
+      &:hover {
+        background-color: white;
+        border: rgb(90, 68, 0) solid 1px;
+        color: rgb(90, 68, 0);
+      }
+    }
+    .btn_cancel {
+      font-weight: bold;
+      background-color: rgb(172, 129, 0);
+      border: rgb(172, 129, 0) solid 1px;
+      &:hover {
+        background-color: white;
+        border: rgb(172, 129, 0) solid 1px;
+        color: rgb(172, 129, 0);
+      }
+    }
+  }
+}
+
 .btn_update {
-  // width: 50%;
   height: 35px;
   margin: 5px;
   border-radius: 5px;
@@ -135,7 +204,6 @@ table {
   }
 }
 .btn_delete {
-  // width: 50%;
   height: 35px;
   margin: 5px;
   border-radius: 5px;

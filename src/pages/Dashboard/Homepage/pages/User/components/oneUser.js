@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 
 export default function OneUser({ user, key, updateOneUser, banOneUser }) {
   const [edit, setEdit] = useState(false);
+  const [alertBan, setAlertBan] = useState(false);
+  const [alertDeban, setAlertDeban] = useState(false);
 
   const validationSchema = yup.object({
     id_user: yup.number(),
@@ -44,12 +46,74 @@ export default function OneUser({ user, key, updateOneUser, banOneUser }) {
     setEdit(!edit);
   }
 
+  function verifyBan() {
+    setAlertBan(!alertBan);
+  }
+
+  function verifyDeban() {
+    setAlertDeban(!alertDeban)
+  }
+
+  function handleCancel() {
+    setAlertBan(!alertBan);
+  }
+
+  function handleCancelD() {
+    setAlertDeban(!alertDeban)
+  }
+
   function handleBan() {
     banOneUser(user);
+    setAlertBan(!alertBan);
+  }
+
+  function handleDeban() {
+    banOneUser(user)
+    setAlertDeban(!alertDeban)
   }
 
   return (
     <>
+      {alertBan === true && (
+        <div className={`${s.alert} d-flex flex-column aic`}>
+          <div className={`${s.head} d-flex aic jcc`}>
+            <i className="fas fa-circle-info"></i>
+            <h2>BANNISSEMENT D'UTILISATEUR</h2>
+          </div>
+          <h4 className="d-flex flex-column aic jcc">
+            Attention ! vous etes sur le point de bannir :
+            <strong>{user.surname}</strong>
+          </h4>
+          <div className={`${s.btn} d-flex`}>
+            <button onClick={handleBan} className={`${s.btn_active}`}>
+              BANNIR
+            </button>
+            <button onClick={handleCancel} className={`${s.btn_cancel}`}>
+              ANNULER
+            </button>
+          </div>
+        </div>
+      )}
+      {alertDeban === true && (
+        <div className={`${s.alert} d-flex flex-column aic`}>
+          <div className={`${s.head} d-flex aic jcc`}>
+            <i className="fas fa-circle-info"></i>
+            <h2>DEBANNISSEMENT D'UTILISATEUR</h2>
+          </div>
+          <h4 className="d-flex flex-column aic jcc">
+            Attention ! vous etes sur le point de retirer le bannissement de :
+            <strong>{user.surname}</strong>
+          </h4>
+          <div className={`${s.btn} d-flex`}>
+            <button onClick={handleDeban} className={`${s.btn_active}`}>
+              RETIRER
+            </button>
+            <button onClick={handleCancelD} className={`${s.btn_cancel}`}>
+              ANNULER
+            </button>
+          </div>
+        </div>
+      )}
       {edit === false ? (
         <tr className="d-flex jcsb">
           <td
@@ -73,11 +137,15 @@ export default function OneUser({ user, key, updateOneUser, banOneUser }) {
               <i className="fa-solid fa-user-pen"></i>
             </button>
             {user.user_role >= 0 ? (
-              <button onClick={handleBan} className={`${s.btn_delete} ${s.btn}`}>
+              <button
+                onClick={verifyBan}
+                className={`${s.btn_delete} ${s.btn}`}>
                 <i className="fa-solid fa-user-slash"></i>
               </button>
             ) : (
-              <button onClick={handleBan} className={`${s.btn_warning} ${s.btn}`}>
+              <button
+                onClick={verifyDeban}
+                className={`${s.btn_warning} ${s.btn}`}>
                 <i className="fa-solid fa-user-check"></i>
               </button>
             )}
