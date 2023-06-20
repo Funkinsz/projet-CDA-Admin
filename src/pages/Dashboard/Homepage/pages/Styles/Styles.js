@@ -9,6 +9,7 @@ export default function Styles() {
   const [st, setSt] = useState([]);
   const [value, setValue] = useState("");
   const [search, setSearch] = useState("");
+  const [order, setOrder] = useState(true);
 
   async function handleSearch(e) {
     const searchInput = e.target.value;
@@ -38,7 +39,7 @@ export default function Styles() {
   function handleChange(e) {
     const addValue = e.target.value;
     const convertSearchInput =
-    addValue.charAt(0).toUpperCase() + addValue.slice(1).toLowerCase();
+      addValue.charAt(0).toUpperCase() + addValue.slice(1).toLowerCase();
     setValue(convertSearchInput);
   }
 
@@ -62,6 +63,10 @@ export default function Styles() {
 
   async function handleClear() {
     setValue("");
+  }
+
+  function handleOrder() {
+    setOrder(!order);
   }
 
   return (
@@ -104,17 +109,40 @@ export default function Styles() {
           <thead>
             <tr className="d-flex jcsb">
               <th className={`${styles.td_id}`}>ID</th>
-              <th className={`${styles.td_content}`}>NAME</th>
+              <th
+                onClick={handleOrder}
+                className={`${styles.td_content} ${styles.cursor} d-flex jcc`}>
+                NAME
+                {order === true ? (
+                  <i className="fa-solid fa-caret-down"></i>
+                ) : (
+                  <i className="fa-solid fa-caret-up"></i>
+                )}
+              </th>
               <th className={`${styles.td_id}`}>ACTIONS</th>
             </tr>
           </thead>
           <tbody className="d-flex flex-column jcsb">
-            {st &&
-              st
-                .filter((a) => a.name_style.startsWith(search))
-                .map((a, i) => (
-                  <OneStyle style={a} key={i} updateOneStyle={updateOneStyle} />
-                ))}
+            {st && order === true
+              ? st
+                  .filter((a) => a.name_style.startsWith(search))
+                  .map((a, i) => (
+                    <OneStyle
+                      style={a}
+                      key={i}
+                      updateOneStyle={updateOneStyle}
+                    />
+                  ))
+              : st
+                  .filter((a) => a.name_style.startsWith(search))
+                  .reverse()
+                  .map((a, i) => (
+                    <OneStyle
+                      style={a}
+                      key={i}
+                      updateOneStyle={updateOneStyle}
+                    />
+                  ))}
           </tbody>
         </table>
       </div>

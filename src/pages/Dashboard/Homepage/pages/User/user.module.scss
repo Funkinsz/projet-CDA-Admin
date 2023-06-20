@@ -260,3 +260,12 @@ table {
     color: white;
   }
 }
+
+.cursor {
+  &:hover {
+    cursor: pointer;
+  }
+  i {
+    margin: 0 10px;
+  }
+}
