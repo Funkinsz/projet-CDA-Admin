@@ -80,7 +80,7 @@ table {
         }
       }
     }
-    tr:nth-child(even) {
+    tr:nth-type(even) {
       background-color: #9f9f9f2a;
     }
   }
